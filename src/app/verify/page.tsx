@@ -23,7 +23,7 @@ export default function EmailVerificationPage() {
             <EmailVerificationForm />
 
             <p className="text-center">
-              Didn't receive <abbr title="One-time password">OTP</abbr>?
+              Didn&apos;t receive <abbr title="One-time password">OTP</abbr>?
               <Button variant="link" className="text-red cursor-pointer font-normal">
                 Resend OTP
               </Button>
