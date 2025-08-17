@@ -4,7 +4,7 @@ export const LoginFormSchema = z
   .object({
     email: z
       .email({
-        error: "Please provide a valid email address.",
+        error: "Please enter a valid email address.",
       })
       .max(30, {
         error: "Email cannot exceed 30 characters.",
@@ -37,7 +37,7 @@ export const SignupFormSchema = z
   .object({
     fullName: z
       .string({
-        error: "Please provide a valid name.",
+        error: "Please enter a valid name.",
       })
       .max(30, {
         error: "Name cannot exceed 30 characters.",
@@ -45,7 +45,7 @@ export const SignupFormSchema = z
       .trim(),
     email: z
       .email({
-        error: "Please provide a valid email address.",
+        error: "Please enter a valid email address.",
       })
       .max(30, {
         error: "Email cannot exceed 30 characters.",
@@ -102,7 +102,7 @@ export const ForgotPasswordFormSchema = z
   .object({
     email: z
       .email({
-        error: "Please provide a valid email address.",
+        error: "Please enter a valid email address.",
       })
       .max(30, {
         error: "Email cannot exceed 30 characters.",
