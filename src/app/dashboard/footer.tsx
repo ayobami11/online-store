@@ -35,7 +35,7 @@ export const Footer = () => {
           />
           <Button
             variant="ghost"
-            className="text-red absolute top-1/2 -translate-y-1/2 right-0 flex items-center gap-x-3 cursor-pointer rounded-2xl"
+            className="text-red bg-white absolute top-1/2 -translate-y-1/2 right-0 flex items-center gap-x-3 cursor-pointer rounded-2xl"
             onClick={copyReferralCode}
           >
             Copy <Copy />
