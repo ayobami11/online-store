@@ -20,7 +20,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0081FE] m-6 p-4 flex gap-4 max-w-[1034px] rounded-2xl">
+    <footer className="bg-[#0081FE] m-6 p-4 flex flex-col gap-4 max-w-[1034px] rounded-2xl md:flex-row">
       <div className="w-full max-w-[534px]">
         <Label htmlFor="referral-code" className="text-white font-normal mb-4">
           Referral code

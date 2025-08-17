@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <main>
         <Stats />
-        <div className="flex gap-4 m-6">
+        <div className="flex flex-col gap-4 m-6 md:flex-row">
           <Activities />
           <Products />
         </div>

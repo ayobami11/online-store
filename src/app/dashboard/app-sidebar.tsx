@@ -63,12 +63,11 @@ const items: ItemProp[] = [
 
 export const AppSidebar = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <Sidebar>
       <SidebarHeader>
-        <figure className="mb-3 ml-4 flex flex-col items-center gap-4">
+        <figure className="mb-6 ml-4 flex flex-col items-center gap-4">
           <Image
             src="/assets/images/sidebar-header-image.jpg"
             alt="Damola Spencer's avatar"

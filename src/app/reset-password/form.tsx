@@ -55,8 +55,6 @@ export const ResetPasswordForm = () => {
     router.push("/login");
   }
 
-  console.log(form.formState.errors);
-
   return (
     <Form {...form}>
       <form method="POST" onSubmit={form.handleSubmit(onSubmit)}>

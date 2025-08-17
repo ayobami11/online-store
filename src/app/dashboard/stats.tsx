@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Stats = () => {
   return (
-    <section className="bg-white p-4 m-6 flex flex-wrap gap-3 rounded-2xl">
+    <section className="bg-white p-4 m-6 flex flex-wrap justify-center gap-3 rounded-2xl">
       <div className="bg-[#F1F1FD] rounded-2xl flex flex-col gap-1 items-center py-3 min-w-[222px]">
         <Image
           src="/assets/images/total-income-icon.png"
