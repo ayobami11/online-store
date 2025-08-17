@@ -1,8 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { REGEXP_ONLY_DIGITS } from "input-otp";
@@ -15,7 +17,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import {
@@ -25,6 +26,8 @@ import {
 } from "@/components/ui/input-otp";
 
 export const EmailVerificationForm = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof EmailVerificationFormSchema>>({
     resolver: zodResolver(EmailVerificationFormSchema),
     defaultValues: {
@@ -33,13 +36,9 @@ export const EmailVerificationForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof EmailVerificationFormSchema>) {
-    // toast("You submitted the following values", {
-    //   description: (
-    //     <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    toast.success("Account verification was successful.");
+
+    router.push("/dashboard");
   }
 
   return (
@@ -55,7 +54,13 @@ export const EmailVerificationForm = () => {
           render={({ field }) => (
             <FormItem className="mb-8">
               <FormControl>
-                <InputOTP maxLength={6} pattern={REGEXP_ONLY_DIGITS} {...field}>
+                <InputOTP
+                  autoFocus
+                  maxLength={4}
+                  pattern={REGEXP_ONLY_DIGITS}
+                  onComplete={form.handleSubmit(onSubmit)}
+                  {...field}
+                >
                   <InputOTPGroup className="space-x-4 mb-4 mx-auto">
                     <InputOTPSlot
                       index={0}

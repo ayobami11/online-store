@@ -1,10 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -24,6 +26,8 @@ import { SignupFormSchema } from "@/utils/zod";
 import { CircleCheck, CircleX, EyeIcon, EyeOffIcon } from "lucide-react";
 
 export const SignupForm = () => {
+  const router = useRouter();
+
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
@@ -47,13 +51,9 @@ export const SignupForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof SignupFormSchema>) {
-    // toast("You submitted the following values", {
-    //   description: (
-    //     <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    toast(`An OTP code has been sent to ${form.getValues("email")} to verify your account.`);
+
+    router.push("/verify");
   }
 
   return (
@@ -99,6 +99,7 @@ export const SignupForm = () => {
                 <FormControl>
                   <Input
                     id="email"
+                    type="email"
                     placeholder="Enter email"
                     className={`text-base bg-[#f7f7f7] placeholder:text-[#999999] ${
                       form.formState.errors.email
@@ -143,7 +144,7 @@ export const SignupForm = () => {
                       size="icon"
                       onClick={togglePasswordVisibility}
                       disabled={form.getValues("password").length === 0}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full disabled:cursor-not-allowed"
+                      className="cursor-pointer absolute right-2 top-1/2 -translate-y-1/2 rounded-full disabled:cursor-not-allowed"
                     >
                       {showPassword ? (
                         <EyeOffIcon

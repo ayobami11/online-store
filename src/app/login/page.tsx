@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { Button } from "@/components/ui/button";
+
 import { LoginForm } from "@/app/login/form";
 
 export default function LoginPage() {
@@ -23,10 +25,10 @@ export default function LoginPage() {
             <LoginForm />
 
             <p className="text-center">
-              Don&apos;t have an account?{" "}
-              <Link href="/signup" className="text-red">
-                Sign Up
-              </Link>
+              Don&apos;t have an account?
+              <Button asChild variant="link" className="text-red -ml-2">
+                <Link href="/signup">Sign Up</Link>
+              </Button>
             </p>
           </main>
         </div>

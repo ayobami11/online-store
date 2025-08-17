@@ -1,8 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +21,8 @@ import { Input } from "@/components/ui/input";
 import { ForgotPasswordFormSchema } from "@/utils/zod";
 
 export const ForgotPasswordForm = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof ForgotPasswordFormSchema>>({
     resolver: zodResolver(ForgotPasswordFormSchema),
     defaultValues: {
@@ -27,13 +31,13 @@ export const ForgotPasswordForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof ForgotPasswordFormSchema>) {
-    // toast("You submitted the following values", {
-    //   description: (
-    //     <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    toast.success(
+      `A link to reset your password has been sent to ${form.getValues(
+        "email"
+      )}`
+    );
+
+    router.push("/reset-password");
   }
 
   return (
@@ -50,6 +54,7 @@ export const ForgotPasswordForm = () => {
               <FormControl>
                 <Input
                   id="email"
+                  type="email"
                   placeholder="example@email.com"
                   className={`text-base bg-[#f7f7f7] placeholder:text-[#999999] ${
                     form.formState.errors.email
