@@ -35,7 +35,7 @@ export const EmailVerificationForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof EmailVerificationFormSchema>) {
+  function onSubmit() {
     toast.success("Account verification was successful.");
 
     router.push("/dashboard");

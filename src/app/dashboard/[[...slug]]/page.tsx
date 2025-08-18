@@ -5,7 +5,7 @@ import { Products } from "@/app/dashboard/products";
 import { RecentTransactions } from "@/app/dashboard/recent-transactions";
 import { Footer } from "@/app/dashboard/footer";
 
-export default function Home({children}: { children: React.ReactNode }) {
+export default function Home() {
   return (
     <div className="w-full max-w-[1034px] mt-12 mb-3 font-open-sans">
       <Header />

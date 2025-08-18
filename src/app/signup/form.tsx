@@ -50,7 +50,7 @@ export const SignupForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof SignupFormSchema>) {
+  function onSubmit() {
     toast(`An OTP code has been sent to ${form.getValues("email")} to verify your account.`);
 
     router.push("/verify");
