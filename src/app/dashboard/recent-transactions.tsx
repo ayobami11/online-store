@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
-import { TransactionRow } from "@/app/dashboard/payment/page";
+import { TransactionRow } from "@/app/dashboard/transaction-row";
 
 export const RecentTransactions = () => {
   return (
