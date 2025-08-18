@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 import { ArrowLeft } from "lucide-react";
 
-export default function Products() {
+export default function ProductsPage() {
   return (
     <section className="self-start bg-white rounded-2xl text-[#242424] w-full max-w-[950px] my-10 mx-8 px-6 pt-10 pb-20">
       <header className="flex items-center gap-x-8 mb-12">

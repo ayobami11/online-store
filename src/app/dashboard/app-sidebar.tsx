@@ -81,7 +81,7 @@ export const AppSidebar = () => {
           </figcaption>
         </figure>
       </SidebarHeader>
-      <SidebarContent className="font-dm-sans">
+      <SidebarContent className="font-dm-sans ml-10">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-3">
@@ -92,7 +92,7 @@ export const AppSidebar = () => {
                       href={item.url}
                       replace={item.url === "/login"}
                       className={cn(
-                        "flex items-center gap-3 text-[#A8A8A8] text-lg py-5 px-15.5",
+                        "flex items-center gap-3 text-[#A8A8A8] text-lg py-5 pl-10 pr-6",
                         item.url === pathname &&
                           "!text-red border-l-4 border-l-red !bg-white shadow-[0_12px_24px_0_#9393931A]"
                       )}

@@ -21,7 +21,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#0081FE] m-6 p-4 flex flex-col gap-4 max-w-[1034px] rounded-2xl md:flex-row">
-      <div className="w-full max-w-[534px]">
+      <div className="w-full md:max-w-[534px]">
         <Label htmlFor="referral-code" className="text-white font-normal mb-4">
           Referral code
         </Label>
@@ -42,7 +42,7 @@ export const Footer = () => {
           </Button>
         </div>
       </div>
-      <div className="bg-white w-full flex justify-center items-center gap-4 max-w-[400px] rounded-[1.25rem] self-end py-2">
+      <div className="bg-white w-full flex justify-center items-center gap-4 md:max-w-[400px] rounded-[1.25rem] self-end py-2">
         <a
           href="https://www.whatsapp.com"
           target="_blank"
